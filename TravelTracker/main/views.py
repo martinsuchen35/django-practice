@@ -18,9 +18,6 @@ def detail(request, location_id):
 def post_location(request):
     form = LocationForm(request.POST)
     if form.is_valid():
-        location = Location(name=form.cleaned_data['name'],
-                            num_restaurants=form.cleaned_data['num_restaurants'],
-                            predators=form.cleaned_data['predators'],
-                            img_url=form.cleaned_data['img_url'])
-        location.save()
+        form.save(commit=True)
+
     return HttpResponseRedirect('/')

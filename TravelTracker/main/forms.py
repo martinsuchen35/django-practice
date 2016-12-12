@@ -1,8 +1,8 @@
 from django import forms
+from .models import Location
 
 
-class LocationForm(forms.Form):
-    name = forms.CharField(max_length=50)
-    num_restaurants = forms.IntegerField()
-    predators = forms.CharField(max_length=100)
-    img_url = forms.CharField(max_length=200)
+class LocationForm(forms.ModelForm):
+    class Meta:
+        model = Location
+        fields = ['name', 'num_restaurants', 'predators', 'img_url']
