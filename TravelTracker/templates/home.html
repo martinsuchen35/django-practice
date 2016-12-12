@@ -9,7 +9,7 @@
 
     <main class="container">
 
-        {% for location in locations %}
+        {% for location in locations|dictsort:'name' %}
             <div class="tracker panel panel-default {% cycle 'tracker-left' 'tracker-right' %}">
                 <div class="panel-heading">
                     <h2 class="panel-title">{{ location.name }}</h2>
