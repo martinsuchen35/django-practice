@@ -22,5 +22,9 @@
         location.save()
         Location.objects.all()
 
-- Create Super User
+- Create Super User for Admin
     python manage.py createsuperuser
+
+- Register Model in Admin
+    - Register models in admin.py
+    - localhost:8000/admin/
