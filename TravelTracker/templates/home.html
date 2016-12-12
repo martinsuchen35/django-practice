@@ -6,7 +6,10 @@
 </head>
 <body>
     <h1>TravelTracker</h1>
-    <p>{{ location_name }}</p>
-    <p>{{ predators }}</p>
+    {% for location in locations %}
+        <p>{{ location.name }}</p>
+        <p>{{ location.predators }}</p>
+        <img src="{{ location.img_url }}" width="80" />
+    {% endfor %}
 </body>
 </html>
