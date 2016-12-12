@@ -19,4 +19,12 @@
         </div>
         {% endfor %}
     </div>
+
+    <div class="tracker panel panel-default">
+        <form action="post_location/" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="btn btn-primary" type="submit" value="Submit" disabled="disabled" />
+        </form>
+    </div>
 {% endblock %}
