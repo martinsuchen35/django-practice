@@ -21,3 +21,6 @@
         location = Location(name='The Delicate Arch, UT', predators='Scorpions', num_restaurants=0, img_url='http://courseware.codeschool.com/try_django/images/delicate-arch.jpg')
         location.save()
         Location.objects.all()
+
+- Create Super User
+    python manage.py createsuperuser
