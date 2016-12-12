@@ -1,6 +1,7 @@
 from django.db import models
 
 
+# once added model, go to Django shell to migrate, then create objects
 class Location(models.Model):
     name = models.CharField(max_length=100)
     predators = models.CharField(max_length=100)
