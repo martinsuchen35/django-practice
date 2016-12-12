@@ -24,7 +24,7 @@
         <form action="post_location/" method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <input class="btn btn-primary" type="submit" value="Submit" disabled="disabled" />
+            <input class="btn btn-primary" type="submit" value="Submit" />
         </form>
     </div>
 {% endblock %}
