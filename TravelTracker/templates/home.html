@@ -10,43 +10,24 @@
 <body>
 
     <main class="container">
-
-        {% for location in locations|dictsort:'name' %}
-            <div class="tracker panel panel-default {% cycle 'tracker-left' 'tracker-right' %}">
-                <div class="panel-heading">
-                    <h2 class="panel-title">{{ location.name }}</h2>
-                </div>
-                <div class="panel-body">
-                    <div class="tracker-photo">
-                        <img src="{{ location.img_url }}" alt="" height="300" />
+        <div class="row">
+            {% for location in locations|dictsort:'name' %}
+            <div class="col-md-3">
+                <a href="/{{ location.id }}/">
+                    <div class="tracker panel panel-default">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">{{ location.name }}</h2>
+                        </div>
+                        <div class="panel-body">
+                            <div class="tracker-photo">
+                                <img src="{{ location.img_url }}" alt="" height="300" />
+                            </div>
+                        </div>
                     </div>
-                    <table class="tracker-table">
-                        <tr>
-                            <th>
-                                <img src="{% static 'images/logo.png' %}" alt="Location Icon" />
-                                Location:
-                            </th>
-                            <td>{{ location.name }}</td>
-                        </tr>
-                        <tr>
-                            <th>
-                                <img src="{% static 'images/logo.png' %}" alt="Restaurant Icon" />
-                                Number of Restaurants:
-                            </th>
-                            <td>{{ location.num_restaurants }}</td>
-                        </tr>
-                        <tr>
-                            <th>
-                                <img src="{% static 'images/logo.png' %}" alt="Predator Icon" />
-                                Predators:
-                            </th>
-                            <td>{{ location.predators }}</td>
-                        </tr>
-                    </table>
-                </div>
+                </a>
             </div>
-        {% endfor %}
-
+            {% endfor %}
+        </div>
     </main>
 
     <footer class="footer" role="contentinfo">
